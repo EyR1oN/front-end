@@ -12,33 +12,6 @@ body {
   background-position: center center;
 }
 
-.log {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 100px;
-}
-
-.login {
-  text-align: center;
-}
-
-.login h1 {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 60px;
-}
-
 .wrapper-top {
   width: 1170px;
   margin: auto;
@@ -82,56 +55,6 @@ body {
 }
 
 .nav-area-li a:hover {
-  background: #fff;
-  color: #333;
-}
-
-.box-log {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 40px;
-  color: #fff;
-  text-align: center;
-}
-
-.box-log input, .box-log a {
-  border-color: #333;
-  border-width: 2px;
-  color: #fff;
-  border-radius: .375rem;
-  border: 1px solid #cad1d7;
-  background-color: transparent;
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 10px;
-  font-size: 25px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.box-log input[type="submit"], .box-log a {
-  color: #fff;
-  border: none;
-  display: inline-block;
-  text-decoration: none;
-  padding: 5px 20px;
-  margin-top: 10px;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-
-.box-log input:hover {
   background: #fff;
   color: #333;
 }
@@ -180,7 +103,7 @@ body {
 
 .box {
   padding: 40px;
-  margin-top: 50px;
+  margin-top: 60px;
   position: absolute;
   width: 340px;
   left: 50%;
@@ -240,9 +163,6 @@ body {
   .box input[type="submit"] {
     font-size: 40px;
   }
-  .header h1 {
-    font-size: 70px;
-  }
   .welcome-text a {
     font-size: 40px;
   }
@@ -251,24 +171,6 @@ body {
   }
   .welcome-text {
     margin-top: 500px;
-  }
-}
-
-@media (orientation: portrait) {
-  .nav-area-li a {
-    font-size: 50px;
-  }
-  .box input {
-    font-size: 50px;
-  }
-  .box input[type="submit"] {
-    font-size: 40px;
-  }
-  .box a {
-    font-size: 40px;
-  }
-  .log {
-    margin-top: 400px;
   }
 }
 /*# sourceMappingURL=style_home.css.map */
