@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 
-import './html_css/styles/layout.css'
+import './html_css/styles/style_home.css'
 
 
 export default class Home extends Component {

@@ -6,6 +6,7 @@ import Register from "./Register";
 import User from "./User";
 import Service from "./Service";
 import Auditorium from "./Auditorium";
+import LoginRoute from "./LoginRoute";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/register" element={<Register />} />
-                  <Route path="/user" element={<User />} />
+                  <Route path="/user" element={<LoginRoute component={<User />}/>} />
                   <Route path="/service" element={<Service />} />
                   <Route path="/auditorium" element={<Auditorium />} />
                 </Routes>
