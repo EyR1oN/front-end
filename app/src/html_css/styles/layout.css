@@ -1,5 +1,4 @@
 @import url("user.css");
-@import url("style_home.css");
 @import url("framework.css");
 .container {
   padding: 100px 0;
@@ -57,6 +56,16 @@ input:focus, textarea:focus, *:required:focus {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+  }
+}
+
+@media (orientation: portrait) {
+  .container-aud {
+    margin-left: 20px;
+  }
+  .container {
+    padding: auto;
+    margin-left: 0;
   }
 }
 /*# sourceMappingURL=layout.css.map */

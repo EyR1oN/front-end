@@ -106,7 +106,7 @@ h1 {
   margin: 0 auto;
 }
 
-.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter {
+.one_half, .one_half-aud, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter {
   display: inline-block;
   float: left;
   margin: 0 0 0 3.06748466257669%;
@@ -119,6 +119,11 @@ h1 {
 }
 
 .one_half, .two_quarter {
+  width: 48.46625766871166%;
+  color: #fff;
+}
+
+.one_half-aud, .two_quarter {
   width: 48.46625766871166%;
   color: #fff;
 }
@@ -186,7 +191,23 @@ h1 {
     font-size: 50px;
   }
   p {
+    font-size: 40px;
+  }
+  .one_half {
+    margin: 0 0 0 0;
+  }
+  .header h1 {
     font-size: 50px;
+  }
+  .img {
+    margin: 0 0 0 435px;
+  }
+  .one_half-aud {
+    width: 100%;
+    text-align: center;
+  }
+  .heading {
+    font-size: 40px;
   }
 }
 /*# sourceMappingURL=framework.css.map */
