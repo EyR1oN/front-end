@@ -17,9 +17,9 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/register" element={<Register />} />
-                  <Route path="/user" element={<LoginRoute component={<User />}/>} />
+                  <Route path="/user" element={<LoginRoute component={User}/>} />
                   <Route path="/service" element={<Service />} />
-                  <Route path="/auditorium" element={<Auditorium />} />
+                  <Route path="/auditorium" element={<LoginRoute component={Auditorium}/>} />
                 </Routes>
       </BrowserRouter>
     </div>

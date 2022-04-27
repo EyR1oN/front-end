@@ -1,40 +1,38 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import { sendRequest } from './SendRequest.js'
+import { useNavigate } from "react-router-dom";
 import './html_css/styles/style_login.css'
 
-export default class Register extends Component {
+export default function Register() {
 
-  handleSubmit = reg => {
-    const requestURL = 'http://localhost:5000/user'
-    reg.preventDefault()
-    const data = {
-      username: this.username,
-      password: this.password,
-      confirmPassord: this.confirmPassord
-    }
-    if (this.password === this.confirmPassord) {
-      sendRequest('POST', requestURL, null, null, data)
-      .then((data) => console.log(data))
+  const [userReg, setUserReg] = useState('')
+  let navigate = useNavigate();
+  const handleSubmit = (reg) => {
+    reg.preventDefault();
+    const requestURL = 'http://localhost:5000/user';
+    if((userReg.password === userReg.confirmPassord) && (userReg.confirmPassord != undefined)){
+      sendRequest('POST', requestURL, null, null, userReg)
+      .then((data) => {window.localStorage.setItem("userData", JSON.stringify(data)); navigate('/service');})
       .catch((err) => console.log(err));
     }
   }
 
-  render() {
+  
     return (
-        <form className="log" onSubmit={this.handleSubmit}>
+        <form className="log">
           <div className="login">
             <h1>Registration</h1>
           </div>
           <div className="box-log">
-            <input type="user" name="" placeholder="Username" required onChange={reg => this.username = reg.target.value}></input>
-            <input type="password" name="" placeholder="Password" required onChange={reg => this.password = reg.target.value}></input>
-            <input type="password" name="" placeholder="Confirm password" required onChange={reg => this.confirmPassord = reg.target.value}></input>
-            <input type="submit" name="" value="Submit"></input>
+            <input type="user" name="" placeholder="Username" required onChange={e => setUserReg(prev => ({...prev, username: e.target.value}))}></input>
+            <input type="password" name="" placeholder="Password" required onChange={e => setUserReg(prev => ({...prev, password: e.target.value}))}></input>
+            <input type="password" name="" placeholder="Confirm password" required onChange={e => setUserReg(prev => ({...prev, confirmPassord: e.target.value}))}></input>
+            <input type="submit" name="" value="Submit" onClick={handleSubmit}></input>
             <Link to="/login">Log in</Link>
           </div>
         
       </form>
     )
-  }
+  
 }

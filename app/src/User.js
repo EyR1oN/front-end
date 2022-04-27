@@ -1,32 +1,44 @@
 import React, { useState } from 'react'
-import Login from './Login'
 import { sendRequest } from './SendRequest.js'
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './html_css/styles/layout.css'
 
 export default function User() {
   const [user, setUser] = useState(JSON.parse(window.localStorage.getItem('userData')) || '')
+  const [oldUser, setOldUser] = useState({oldPassword: user.password, oldUsername: user.username} || '')
+  console.log(user);
+  console.log(oldUser);
+
   let navigate = useNavigate();
   const saveData = (e) => {
     e.preventDefault();
-    const requestURL = `http://localhost:5000/user/${user.oldUsername}`;
-    sendRequest('PUT', requestURL, user.oldUsername, user.oldPassword, user)
-    .then((data) => console.log(data))
+    const requestURL = `http://localhost:5000/user/${oldUser.oldUsername}`;
+    sendRequest('PUT', requestURL, oldUser.oldUsername, oldUser.oldPassword, user)
+    .then((data) => {console.log(data); 
+      setOldUser({oldPassword: user.password, oldUsername: user.username})})
     .catch((err) => console.log(err));
+
+    // setOldUser({oldPassword: user.password, oldUsername: user.username});
   };
 
   const logout = (out) => {
     out.preventDefault();
-    console.log("logout");
-    setUser({username: '', firstName: '', lastName: '', email: '', password: '', phoneNumber: ''});
-    localStorage.clear();
+    setUser({username: undefined, firstName: undefined, lastName: undefined, email: undefined, password: undefined, phoneNumber: undefined});
+    window.localStorage.clear();
     navigate("/login");
   };
 
-  if (!window.localStorage.getItem("userData")){
+  const deleteData = (del) => {
+    del.preventDefault();
+    setUser({username: undefined, firstName: undefined, lastName: undefined, email: undefined, password: undefined, phoneNumber: undefined});
+    window.localStorage.clear();
+    const requestURL = `http://localhost:5000/user/${oldUser.oldUsername}`;
+    sendRequest('DELETE', requestURL, oldUser.oldUsername, oldUser.oldPassword)
+    .then((data) => {console.log(data); 
+      setOldUser({oldPassword: undefined, oldUsername: undefined})})
+    .catch((err) => console.log(err));
     navigate("/login");
-    return;
-  }
+  };
 
   return (
     <div className="wrapper-top">
@@ -44,7 +56,7 @@ export default function User() {
                 id="input-username"
                 className="form-control form-control-alternative"
                 placeholder="Username" defaultValue={user?.username || ''}
-                onChange={e => setUser(prev => ({...prev, firstName: e.target.value}))} 
+                onChange={e => setUser(prev => ({...prev, username: e.target.value}))} 
               />
               </div>
           </div>
@@ -107,7 +119,7 @@ export default function User() {
                     type="text"
                     id="input-country"
                     className="form-control form-control-alternative"
-                    placeholder="Country" defaultValue={user?.phoneNumber || ''}
+                    placeholder="Phone" defaultValue={user?.phoneNumber || ''}
                     onChange={e => setUser(prev => ({...prev, phoneNumber: e.target.value}))} 
                 />
               </div>
@@ -118,7 +130,7 @@ export default function User() {
       <form>
       <div className="box">
           <input type="submit" name="" value="Save" onClick={saveData}></input>
-          <input type="submit" name="" value="Delete me"></input>
+          <input type="submit" name="" value="Delete me" onClick={deleteData}></input>
           <input type="submit" name="" value="Log Out" onClick={logout}></input>
         </div>
       </form>
