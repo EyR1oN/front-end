@@ -68,4 +68,4 @@ function sendRequest(method, url, user = null, password = null, body = null) {
 //     .then((data) => console.log(data))
 //     .catch((err) => console.log(err));
 
-console.log(JSON.parse(localStorage["userData"]))
+console.log(JSON.parse(localStorage.userData));

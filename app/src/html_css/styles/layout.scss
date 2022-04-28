@@ -2,15 +2,16 @@
 
 @import url("framework.css");
 
-@mixin orange(){
-  background-color: #EA5616;
-  border-color: #EA5616;
+@mixin orange() {
+  background-color: #ea5616;
+  border-color: #ea5616;
 }
 .container {
   padding: 100px 0;
   margin-left: 200px;
 }
 .container-aud {
+  margin-top: 0;
   margin-left: 200px;
 }
 .sidebar .sdb_holder {
@@ -21,49 +22,57 @@
   }
 }
 
-a {
-  color: #EA5616;
+#scrolling-aud {
+  height: 540px;
+  overflow: auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+}
 
-  &:active, &:focus {
-    background: transparent;
-  }
+a {
+  color: #ea5616;
 
   &:hover {
-    color: #FFFFFF;
+    background: transparent;
+    color: #ffffff;
   }
 }
 
-input:focus, textarea:focus, *:required:focus {
-  border-color: #EA5616;
+input:focus,
+textarea:focus,
+*:required:focus {
+  border-color: #ea5616;
 }
 
 .btn {
-  color: #FFFFFF;
+  color: #ffffff;
   @include orange();
 
   &.inverse:hover {
-    color: #FFFFFF;
+    color: #ffffff;
     @include orange();
   }
 
-  &:hover, &.inverse {
+  &:hover,
+  &.inverse {
     color: inherit;
     background-color: transparent;
     border-color: inherit;
   }
 }
-@media (max-width:1370px){
-  body{
+@media (max-width: 1370px) {
+  body {
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center; 
+    background-position: center;
   }
 }
-@media (orientation: portrait){
-  .container-aud{
+@media (orientation: portrait) {
+  .container-aud {
     margin-left: 20px;
   }
-  .container{
+  .container {
     padding: auto;
     margin-left: 0;
   }

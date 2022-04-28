@@ -6,6 +6,7 @@
 }
 
 .container-aud {
+  margin-top: 0;
   margin-left: 200px;
 }
 
@@ -17,35 +18,43 @@
   margin-bottom: 0;
 }
 
-a {
-  color: #EA5616;
+#scrolling-aud {
+  height: 540px;
+  overflow: auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
 }
 
-a:active, a:focus {
-  background: transparent;
+a {
+  color: #ea5616;
 }
 
 a:hover {
-  color: #FFFFFF;
+  background: transparent;
+  color: #ffffff;
 }
 
-input:focus, textarea:focus, *:required:focus {
-  border-color: #EA5616;
+input:focus,
+textarea:focus,
+*:required:focus {
+  border-color: #ea5616;
 }
 
 .btn {
-  color: #FFFFFF;
-  background-color: #EA5616;
-  border-color: #EA5616;
+  color: #ffffff;
+  background-color: #ea5616;
+  border-color: #ea5616;
 }
 
 .btn.inverse:hover {
-  color: #FFFFFF;
-  background-color: #EA5616;
-  border-color: #EA5616;
+  color: #ffffff;
+  background-color: #ea5616;
+  border-color: #ea5616;
 }
 
-.btn:hover, .btn.inverse {
+.btn:hover,
+.btn.inverse {
   color: inherit;
   background-color: transparent;
   border-color: inherit;

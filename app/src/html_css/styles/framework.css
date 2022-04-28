@@ -1,11 +1,12 @@
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*::before, *::after {
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -15,25 +16,30 @@
   border: 1px solid;
 }
 
-.clear, .group {
+.clear,
+.group {
   display: block;
 }
 
-.clear::before, .clear::after {
+.clear::before,
+.clear::after {
   display: table;
   content: "";
 }
 
-.group::before, .group::after {
+.group::before,
+.group::after {
   display: table;
   content: "";
 }
 
-.clear, .group {
+.clear,
+.group {
   clear: both;
 }
 
-.clear::after, .group::after {
+.clear::after,
+.group::after {
   clear: both;
 }
 
@@ -42,17 +48,26 @@ a {
   text-decoration: none;
 }
 
-.fl_left, .imgl {
+.fl_left,
+.imgl {
   float: left;
 }
 
-.fl_right, .imgr {
+.fl_right,
+.imgr {
   float: right;
 }
 
 /* Generalise
 --------------------------------------------------------------------------------------------------------------- */
-h6, .heading {
+.columns-2 {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+h6,
+.heading {
   margin: 120px 0 20px 0;
   font-size: 22px;
   line-height: normal;
@@ -61,13 +76,29 @@ h6, .heading {
   color: #fff;
 }
 
-h1 {
-  margin: 150px 0 0 0;
+.heading-aud {
+  margin: 0 0 20px 0;
   font-size: 22px;
   line-height: normal;
   font-weight: normal;
   text-transform: uppercase;
   color: #fff;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.margin-150 {
+  margin: 150px 0 0 0;
+}
+
+.margin-70 {
+  margin: 70px 0 0 0;
 }
 
 .img {
@@ -76,7 +107,7 @@ h1 {
 }
 
 .font-xs {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .font-x1 {
@@ -106,7 +137,13 @@ h1 {
   margin: 0 auto;
 }
 
-.one_half, .one_half-aud, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter {
+.one_half,
+.one_half-aud,
+.one_third,
+.two_third,
+.one_quarter,
+.two_quarter,
+.three_quarter {
   display: inline-block;
   float: left;
   margin: 0 0 0 3.06748466257669%;
@@ -118,12 +155,14 @@ h1 {
   clear: left;
 }
 
-.one_half, .two_quarter {
+.one_half,
+.two_quarter {
   width: 48.46625766871166%;
   color: #fff;
 }
 
-.one_half-aud, .two_quarter {
+.one_half-aud,
+.two_quarter {
   width: 48.46625766871166%;
   color: #fff;
 }

@@ -4,7 +4,7 @@
   "description": "**V-7**",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src/index.js --ignore-pattern node_modules/",
+    "lint": "eslint ./app/src/**.js --ignore-pattern node_modules/",
     "lint:fix": "eslint ./src --fix"
   },
   "repository": {
@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/EyR1oN/front-end#readme",
   "devDependencies": {
-     "eslint": "^6.8.0",
-     "eslint-config-airbnb-base": "^14.0.0",
-     "eslint-plugin-import": "^2.20.1"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "prettier": "2.6.2"
   }
 }

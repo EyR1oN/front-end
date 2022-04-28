@@ -1,12 +1,33 @@
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(https://www.universities.guru/wp-content/uploads/2020/10/Lviv-Polytechnic-National-University-2-scaled.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://www.universities.guru/wp-content/uploads/2020/10/Lviv-Polytechnic-National-University-2-scaled.jpg);
+  font-family: "Poppins", sans-serif;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.8)),
+      to(rgba(0, 0, 0, 0.8))
+    ),
+    url(https://www.universities.guru/wp-content/uploads/2020/10/Lviv-Polytechnic-National-University-2-scaled.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(https://www.universities.guru/wp-content/uploads/2020/10/Lviv-Polytechnic-National-University-2-scaled.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -15,7 +36,7 @@ body {
 .wrapper-top {
   width: 1170px;
   margin: auto;
-  height: 100px;
+  height: 50px;
 }
 
 .header {
@@ -65,14 +86,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 1170px;
   margin: auto;
   margin-top: 200px;
@@ -108,16 +129,17 @@ body {
   width: 340px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
 }
 
-.box input, .box a {
+.box input,
+.box a {
   border-color: #333;
   border-width: 2px;
   color: #fff;
-  border-radius: .375rem;
+  border-radius: 0.375rem;
   border: 1px solid #cad1d7;
   background-color: transparent;
   display: inline-block;
@@ -128,7 +150,8 @@ body {
   text-align: center;
 }
 
-.box input[type="submit"], .box a {
+.box input[type="submit"],
+.box a {
   width: 100%;
   color: #fff;
   border: none;
@@ -140,7 +163,8 @@ body {
   text-transform: uppercase;
 }
 
-.box input:hover, .box a:hover {
+.box input:hover,
+.box a:hover {
   background: #fff;
   color: #333;
 }
