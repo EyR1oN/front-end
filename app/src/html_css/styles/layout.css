@@ -18,6 +18,15 @@
   margin-bottom: 0;
 }
 
+.margin-top-5 {
+  margin-top: 5px;
+}
+
+.btns {
+  width: 200px;
+  display: inline-block;
+}
+
 #scrolling-aud {
   height: 540px;
   overflow: auto;
@@ -53,8 +62,7 @@ textarea:focus,
   border-color: #ea5616;
 }
 
-.btn:hover,
-.btn.inverse {
+.btn:hover, .btn.inverse {
   color: inherit;
   background-color: transparent;
   border-color: inherit;

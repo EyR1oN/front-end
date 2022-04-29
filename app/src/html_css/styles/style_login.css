@@ -128,7 +128,7 @@ body {
   color: #333;
 }
 
-a:hover {
+.box-log a:hover {
   background: #fff;
   color: #333;
 }

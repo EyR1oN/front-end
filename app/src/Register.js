@@ -17,9 +17,15 @@ export default function Register() {
       sendRequest("POST", requestURL, null, null, userReg)
         .then((data) => {
           window.localStorage.setItem("userData", JSON.stringify(data));
+          alert('Successful registration.');
           navigate("/service");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          alert(err['error']);
+        });
+    }
+    else {
+      alert('Error. Passwords are not similar.');
     }
   };
 

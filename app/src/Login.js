@@ -12,12 +12,16 @@ export default function Login() {
   const handleSubmit = (reg) => {
     reg.preventDefault();
     const requestURL = "http://localhost:5000/login";
+    
     sendRequest("POST", requestURL, null, null, userLog)
       .then((data) => {
         window.localStorage.setItem("userData", JSON.stringify(data));
+        alert('Success login.');
         navigate("/service");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err["error"]);
+      });
   };
 
   return (

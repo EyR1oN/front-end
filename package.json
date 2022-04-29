@@ -22,5 +22,8 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
     "prettier": "2.6.2"
+  },
+  "dependencies": {
+    "react-alert": "^7.0.3"
   }
 }

@@ -25,8 +25,9 @@ export default function User() {
       .then((data) => {
         window.localStorage.setItem("userData", JSON.stringify(data));
         setOldUser({ oldPassword: user.password, oldUsername: user.username });
+        alert('User data changed successfully.')
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err['error']));
   };
 
   const logout = (out) => {
@@ -39,6 +40,7 @@ export default function User() {
       password: undefined,
       phoneNumber: undefined,
     });
+    alert('Logged out.')
     window.localStorage.clear();
     navigate("/login");
   };
@@ -58,8 +60,9 @@ export default function User() {
     sendRequest("DELETE", requestURL, oldUser.oldUsername, oldUser.oldPassword)
       .then((data) => {
         setOldUser({ oldPassword: undefined, oldUsername: undefined });
+        alert(data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err['error']));
     navigate("/login");
   };
 

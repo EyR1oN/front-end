@@ -1,12 +1,11 @@
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-*::before,
-*::after {
+*::before, *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .btn {
@@ -21,14 +20,12 @@
   display: block;
 }
 
-.clear::before,
-.clear::after {
+.clear::before, .clear::after {
   display: table;
   content: "";
 }
 
-.group::before,
-.group::after {
+.group::before, .group::after {
   display: table;
   content: "";
 }
