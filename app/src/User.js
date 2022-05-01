@@ -82,7 +82,7 @@ export default function User() {
                   >
                     Username
                   </label>
-                  <input
+                  <input data-testid="input-username"
                     type="text"
                     id="input-username"
                     className="form-control form-control-alternative"
@@ -99,7 +99,7 @@ export default function User() {
                   <label className="form-control-label" htmlFor="input-email">
                     Email address
                   </label>
-                  <input
+                  <input data-testid="input-email"
                     type="text"
                     id="input-email"
                     className="form-control form-control-alternative"
@@ -121,7 +121,7 @@ export default function User() {
                   >
                     First name
                   </label>
-                  <input
+                  <input data-testid="input-first-name"
                     type="text"
                     id="input-first-name"
                     className="form-control form-control-alternative"
@@ -144,7 +144,7 @@ export default function User() {
                   >
                     Last name
                   </label>
-                  <input
+                  <input data-testid="input-last-name"
                     type="text"
                     id="input-last-name"
                     className="form-control form-control-alternative"
@@ -163,7 +163,7 @@ export default function User() {
                   <label className="form-control-label" htmlFor="input-city">
                     Password
                   </label>
-                  <input
+                  <input data-testid="input-password"
                     type="password"
                     id="input-password"
                     className="form-control form-control-alternative"
@@ -180,9 +180,9 @@ export default function User() {
                   <label className="form-control-label" htmlFor="input-country">
                     Phone
                   </label>
-                  <input
+                  <input data-testid="input-phone"
                     type="text"
-                    id="input-country"
+                    id="input-phone"
                     className="form-control form-control-alternative"
                     placeholder="Phone"
                     defaultValue={user?.phoneNumber || ""}

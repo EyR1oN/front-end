@@ -35,7 +35,7 @@ export default function Register() {
         <h1 className="margin-150">Registration</h1>
       </div>
       <div className="box-log">
-        <input
+        <input data-testid="username"
           type="user"
           name=""
           placeholder="Username"
@@ -44,7 +44,7 @@ export default function Register() {
             setUserReg((prev) => ({ ...prev, username: e.target.value }))
           }
         ></input>
-        <input
+        <input data-testid="password"
           type="password"
           name=""
           placeholder="Password"
@@ -53,7 +53,7 @@ export default function Register() {
             setUserReg((prev) => ({ ...prev, password: e.target.value }))
           }
         ></input>
-        <input
+        <input data-testid="confirm-password"
           type="password"
           name=""
           placeholder="Confirm password"
@@ -62,7 +62,7 @@ export default function Register() {
             setUserReg((prev) => ({ ...prev, confirmPassord: e.target.value }))
           }
         ></input>
-        <input
+        <input data-testid="submit-register"
           type="submit"
           name=""
           value="Submit"

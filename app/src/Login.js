@@ -30,7 +30,7 @@ export default function Login() {
         <h1 className="margin-150">Login</h1>
       </div>
       <form className="box-log">
-        <input
+        <input data-testid="username"
           type="text"
           name="Username"
           placeholder="Username"
@@ -39,7 +39,7 @@ export default function Login() {
             setUserLog((prev) => ({ ...prev, username: e.target.value }))
           }
         />
-        <input
+        <input data-testid="password"
           type="password"
           name="Password"
           placeholder="Password"
@@ -48,7 +48,7 @@ export default function Login() {
             setUserLog((prev) => ({ ...prev, password: e.target.value }))
           }
         />
-        <input
+        <input data-testid="submit-login"
           type="submit"
           name="Submit"
           value="Submit"
