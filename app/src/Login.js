@@ -12,11 +12,11 @@ export default function Login() {
   const handleSubmit = (reg) => {
     reg.preventDefault();
     const requestURL = "http://localhost:5000/login";
-    
+
     sendRequest("POST", requestURL, null, null, userLog)
       .then((data) => {
         window.localStorage.setItem("userData", JSON.stringify(data));
-        alert('Success login.');
+        alert("Success login.");
         navigate("/service");
       })
       .catch((err) => {
@@ -30,7 +30,8 @@ export default function Login() {
         <h1 className="margin-150">Login</h1>
       </div>
       <form className="box-log">
-        <input data-testid="username"
+        <input
+          data-testid="username"
           type="text"
           name="Username"
           placeholder="Username"
@@ -39,7 +40,8 @@ export default function Login() {
             setUserLog((prev) => ({ ...prev, username: e.target.value }))
           }
         />
-        <input data-testid="password"
+        <input
+          data-testid="password"
           type="password"
           name="Password"
           placeholder="Password"
@@ -48,7 +50,8 @@ export default function Login() {
             setUserLog((prev) => ({ ...prev, password: e.target.value }))
           }
         />
-        <input data-testid="submit-login"
+        <input
+          data-testid="submit-login"
           type="submit"
           name="Submit"
           value="Submit"

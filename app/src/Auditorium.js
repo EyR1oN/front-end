@@ -5,20 +5,19 @@ import { useNavigate } from "react-router-dom";
 import "./html_css/styles/layout.css";
 
 export default function Auditorium() {
-  
   const params = useParams();
   const auditoriums = Object.values(
-    JSON.parse(window.localStorage.getItem("auditoriumData") || '')
+    JSON.parse(window.localStorage.getItem("auditoriumData") || "")
   );
   const [auditorium, setAuditorium] = useState(
     auditoriums.find((x) => x.idAudience == params.id)
   );
 
   const [reservationEx, setReservationEx] = useState({});
-  
+
   useEffect(() => {
-  const requestURL = `http://localhost:5000/reservation/${auditorium.number}`
-  sendRequest("GET", requestURL)
+    const requestURL = `http://localhost:5000/reservation/${auditorium.number}`;
+    sendRequest("GET", requestURL)
       .then((data) => {
         setReservationEx(data);
       })
@@ -35,13 +34,11 @@ export default function Auditorium() {
       });
   }, []);
 
-
   let navigate = useNavigate();
   const user = JSON.parse(window.localStorage.getItem("userData"));
   if (!user) {
     navigate("/login");
   }
-
 
   const [reservation, setReservation] = useState({
     idAudience: params.id,
@@ -57,11 +54,11 @@ export default function Auditorium() {
     const requestURL = `http://localhost:5000/reservation/${reservationEx.idReservation}`;
     sendRequest("PUT", requestURL, user.username, user.password, reservation)
       .then((data) => {
-        alert('Reservation data changed successfully.');
+        alert("Reservation data changed successfully.");
         setReservationEx(data);
       })
       .catch((err) => {
-        alert(err['error']);
+        alert(err["error"]);
       });
   };
 
@@ -70,11 +67,11 @@ export default function Auditorium() {
     const requestURL = "http://localhost:5000/reservation";
     sendRequest("POST", requestURL, user.username, user.password, reservation)
       .then((data) => {
-        alert('Reservation created successfully.');
+        alert("Reservation created successfully.");
         setReservationEx(data);
       })
       .catch((err) => {
-        alert(err['error']);
+        alert(err["error"]);
       });
   };
 
@@ -83,7 +80,7 @@ export default function Auditorium() {
     const requestURL = `http://localhost:5000/reservation/${reservationEx.idReservation}`;
     sendRequest("DELETE", requestURL, user.username, user.password)
       .then((data) => {
-        alert('Reservation deleted successfully.');
+        alert("Reservation deleted successfully.");
         setReservationEx({
           idReservation: -1,
           idAudience: -1,
@@ -95,7 +92,7 @@ export default function Auditorium() {
         });
       })
       .catch((err) => {
-        alert(err['error']);
+        alert(err["error"]);
       });
   };
 
@@ -112,7 +109,8 @@ export default function Auditorium() {
             <div>
               <p className="btmspace-5">Reserve on hours:</p>
               <p className="btmspace-15">
-                <input data-testid="slider"
+                <input
+                  data-testid="slider"
                   type="range"
                   min="1"
                   max="120"
@@ -130,20 +128,33 @@ export default function Auditorium() {
                 />{" "}
                 <span id="rangeValue">{reservation.amountOfHours}</span>
               </p>
-              {(reservationEx.idUser === reservation.idUser) && 
-              (<div className="btns">
-                  <button data-testid="change" className="btn" onClick={changeReservation}>
-                  Change &raquo;
+              {reservationEx.idUser === reservation.idUser && (
+                <div className="btns">
+                  <button
+                    data-testid="change"
+                    className="btn"
+                    onClick={changeReservation}
+                  >
+                    Change &raquo;
                   </button>
-                  <button data-testid="delete" className="btn margin-top-5" onClick={deleteReservation}>
-                  Cancel Reservation &raquo;
+                  <button
+                    data-testid="delete"
+                    className="btn margin-top-5"
+                    onClick={deleteReservation}
+                  >
+                    Cancel Reservation &raquo;
                   </button>
-              </div>)}
-              {(reservationEx.idUser !== reservation.idUser) && 
-              (<button data-testid="reservate" className="btn" onClick={reservate}>
-                Choose &raquo;
-              </button>)}
-
+                </div>
+              )}
+              {reservationEx.idUser !== reservation.idUser && (
+                <button
+                  data-testid="reservate"
+                  className="btn"
+                  onClick={reservate}
+                >
+                  Choose &raquo;
+                </button>
+              )}
             </div>
           </div>
         </div>

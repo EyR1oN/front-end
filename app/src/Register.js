@@ -17,15 +17,14 @@ export default function Register() {
       sendRequest("POST", requestURL, null, null, userReg)
         .then((data) => {
           window.localStorage.setItem("userData", JSON.stringify(data));
-          alert('Successful registration.');
+          alert("Successful registration.");
           navigate("/service");
         })
         .catch((err) => {
-          alert(err['error']);
+          alert(err["error"]);
         });
-    }
-    else {
-      alert('Error. Passwords are not similar.');
+    } else {
+      alert("Error. Passwords are not similar.");
     }
   };
 
@@ -35,7 +34,8 @@ export default function Register() {
         <h1 className="margin-150">Registration</h1>
       </div>
       <div className="box-log">
-        <input data-testid="username"
+        <input
+          data-testid="username"
           type="user"
           name=""
           placeholder="Username"
@@ -44,7 +44,8 @@ export default function Register() {
             setUserReg((prev) => ({ ...prev, username: e.target.value }))
           }
         ></input>
-        <input data-testid="password"
+        <input
+          data-testid="password"
           type="password"
           name=""
           placeholder="Password"
@@ -53,7 +54,8 @@ export default function Register() {
             setUserReg((prev) => ({ ...prev, password: e.target.value }))
           }
         ></input>
-        <input data-testid="confirm-password"
+        <input
+          data-testid="confirm-password"
           type="password"
           name=""
           placeholder="Confirm password"
@@ -62,7 +64,8 @@ export default function Register() {
             setUserReg((prev) => ({ ...prev, confirmPassord: e.target.value }))
           }
         ></input>
-        <input data-testid="submit-register"
+        <input
+          data-testid="submit-register"
           type="submit"
           name=""
           value="Submit"

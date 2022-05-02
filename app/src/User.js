@@ -25,9 +25,9 @@ export default function User() {
       .then((data) => {
         window.localStorage.setItem("userData", JSON.stringify(data));
         setOldUser({ oldPassword: user.password, oldUsername: user.username });
-        alert('User data changed successfully.');
+        alert("User data changed successfully.");
       })
-      .catch((err) => alert(err['error']));
+      .catch((err) => alert(err["error"]));
   };
 
   const logout = (out) => {
@@ -40,7 +40,7 @@ export default function User() {
       password: undefined,
       phoneNumber: undefined,
     });
-    alert('Logged out.');
+    alert("Logged out.");
     window.localStorage.clear();
     navigate("/login");
   };
@@ -62,7 +62,7 @@ export default function User() {
         setOldUser({ oldPassword: undefined, oldUsername: undefined });
         alert(data);
       })
-      .catch((err) => alert(err['error']));
+      .catch((err) => alert(err["error"]));
     navigate("/login");
   };
 
@@ -82,7 +82,8 @@ export default function User() {
                   >
                     Username
                   </label>
-                  <input data-testid="input-username"
+                  <input
+                    data-testid="input-username"
                     type="text"
                     id="input-username"
                     className="form-control form-control-alternative"
@@ -99,7 +100,8 @@ export default function User() {
                   <label className="form-control-label" htmlFor="input-email">
                     Email address
                   </label>
-                  <input data-testid="input-email"
+                  <input
+                    data-testid="input-email"
                     type="text"
                     id="input-email"
                     className="form-control form-control-alternative"
@@ -121,7 +123,8 @@ export default function User() {
                   >
                     First name
                   </label>
-                  <input data-testid="input-first-name"
+                  <input
+                    data-testid="input-first-name"
                     type="text"
                     id="input-first-name"
                     className="form-control form-control-alternative"
@@ -144,7 +147,8 @@ export default function User() {
                   >
                     Last name
                   </label>
-                  <input data-testid="input-last-name"
+                  <input
+                    data-testid="input-last-name"
                     type="text"
                     id="input-last-name"
                     className="form-control form-control-alternative"
@@ -163,7 +167,8 @@ export default function User() {
                   <label className="form-control-label" htmlFor="input-city">
                     Password
                   </label>
-                  <input data-testid="input-password"
+                  <input
+                    data-testid="input-password"
                     type="password"
                     id="input-password"
                     className="form-control form-control-alternative"
@@ -180,7 +185,8 @@ export default function User() {
                   <label className="form-control-label" htmlFor="input-country">
                     Phone
                   </label>
-                  <input data-testid="input-phone"
+                  <input
+                    data-testid="input-phone"
                     type="text"
                     id="input-phone"
                     className="form-control form-control-alternative"
@@ -200,19 +206,22 @@ export default function User() {
         </form>
         <form>
           <div className="box">
-            <input data-testid="save"
+            <input
+              data-testid="save"
               type="submit"
               name=""
               value="Save"
               onClick={saveData}
             ></input>
-            <input data-testid="delete"
+            <input
+              data-testid="delete"
               type="submit"
               name=""
               value="Delete me"
               onClick={deleteData}
             ></input>
-            <input data-testid="logout"
+            <input
+              data-testid="logout"
               type="submit"
               name=""
               value="Log Out"
