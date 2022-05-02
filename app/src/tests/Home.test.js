@@ -7,3 +7,4 @@ test("renders home page", () => {
   const greet = screen.getByText("Try on your own");
   expect(greet).toBeInTheDocument();
 });
+

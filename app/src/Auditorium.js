@@ -8,7 +8,7 @@ export default function Auditorium() {
   
   const params = useParams();
   const auditoriums = Object.values(
-    JSON.parse(window.localStorage.getItem("auditoriumData"))
+    JSON.parse(window.localStorage.getItem("auditoriumData") || '')
   );
   const [auditorium, setAuditorium] = useState(
     auditoriums.find((x) => x.idAudience == params.id)
@@ -112,7 +112,7 @@ export default function Auditorium() {
             <div>
               <p className="btmspace-5">Reserve on hours:</p>
               <p className="btmspace-15">
-                <input
+                <input data-testid="slider"
                   type="range"
                   min="1"
                   max="120"
@@ -132,15 +132,15 @@ export default function Auditorium() {
               </p>
               {(reservationEx.idUser === reservation.idUser) && 
               (<div className="btns">
-                  <button className="btn" onClick={changeReservation}>
+                  <button data-testid="change" className="btn" onClick={changeReservation}>
                   Change &raquo;
                   </button>
-                  <button className="btn margin-top-5" onClick={deleteReservation}>
+                  <button data-testid="delete" className="btn margin-top-5" onClick={deleteReservation}>
                   Cancel Reservation &raquo;
                   </button>
               </div>)}
               {(reservationEx.idUser !== reservation.idUser) && 
-              (<button className="btn" onClick={reservate}>
+              (<button data-testid="reservate" className="btn" onClick={reservate}>
                 Choose &raquo;
               </button>)}
 

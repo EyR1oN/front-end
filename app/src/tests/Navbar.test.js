@@ -7,3 +7,4 @@ test("renders navbar", () => {
   const linkElement = screen.getByText("Home");
   expect(linkElement).toBeInTheDocument();
 });
+

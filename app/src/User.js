@@ -25,7 +25,7 @@ export default function User() {
       .then((data) => {
         window.localStorage.setItem("userData", JSON.stringify(data));
         setOldUser({ oldPassword: user.password, oldUsername: user.username });
-        alert('User data changed successfully.')
+        alert('User data changed successfully.');
       })
       .catch((err) => alert(err['error']));
   };
@@ -40,7 +40,7 @@ export default function User() {
       password: undefined,
       phoneNumber: undefined,
     });
-    alert('Logged out.')
+    alert('Logged out.');
     window.localStorage.clear();
     navigate("/login");
   };
@@ -200,19 +200,19 @@ export default function User() {
         </form>
         <form>
           <div className="box">
-            <input
+            <input data-testid="save"
               type="submit"
               name=""
               value="Save"
               onClick={saveData}
             ></input>
-            <input
+            <input data-testid="delete"
               type="submit"
               name=""
               value="Delete me"
               onClick={deleteData}
             ></input>
-            <input
+            <input data-testid="logout"
               type="submit"
               name=""
               value="Log Out"
