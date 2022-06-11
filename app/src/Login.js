@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { sendRequest } from "./SendRequest.js";
 import { useNavigate } from "react-router-dom";
-import "./html_css/styles/style_login.css";
 
 export default function Login() {
   const [userLog, setUserLog] = useState(

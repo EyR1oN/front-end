@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { sendRequest } from "./SendRequest";
-import "./html_css/styles/layout.css";
 
 export default function Service() {
   const [aud, setAud] = useState(undefined);
@@ -17,9 +16,9 @@ export default function Service() {
   return (
     <div className="wrapper-top">
       <div>
-        <div className="header container-aud margin-50">
-          {!!aud && <h1 className="margin-70">Choose your auditorium</h1>}
-          {!!!aud && <h1 className="margin-70">Loading...</h1>}
+        <div className="header container-aud">
+          {!!aud && <h1 className="margin-50">Choose your auditorium</h1>}
+          {!!!aud && <h1 className="margin-50">Loading...</h1>}
         </div>
         {!!aud && (
           <div id="scrolling-aud">

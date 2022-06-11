@@ -69,14 +69,6 @@ textarea:focus,
   border-color: inherit;
 }
 
-@media (max-width: 1370px) {
-  body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-}
-
 @media (orientation: portrait) {
   .container-aud {
     margin-left: 20px;
@@ -84,6 +76,11 @@ textarea:focus,
   .container {
     padding: auto;
     margin-left: 0;
+  }
+  #scrolling-aud {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
   }
 }
 /*# sourceMappingURL=layout.css.map */
