@@ -16,6 +16,10 @@
   padding: 0;
 }
 
+.white {
+  color: #fff;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: -webkit-gradient(
@@ -51,33 +55,71 @@ body {
   font-size: 30px;
 }
 
-.nav-area-r {
-  float: right;
-  list-style: none;
-  margin-top: 30px;
+.open-button {
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
 }
 
-.nav-area-l {
-  float: left;
-  list-style: none;
-  margin-top: 30px;
+/* The popup chat - hidden by default */
+.chat-popup {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
 }
 
-.nav-area-li {
-  display: inline-block;
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
 }
 
-.nav-area-li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 20px;
-  font-size: 20px;
-  text-transform: uppercase;
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  resize: none;
+  min-height: 200px;
 }
 
-.nav-area-li a:hover {
-  background: #fff;
-  color: #333;
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #ea5616;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
 }
 
 .welcome-text {
@@ -106,18 +148,21 @@ body {
   font-size: 60px;
 }
 
-.welcome-text a {
+.welcome-text a,
+.welcome-text button {
   border: 1px solid #fff;
   padding: 10px 25px;
+  background: transparent;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 20px;
   display: inline-block;
   color: #fff;
 }
 
-.welcome-text a:hover {
+.welcome-text a:hover,
+.welcome-text button:hover {
   background: #fff;
   color: #333;
 }
@@ -125,7 +170,7 @@ body {
 .box {
   padding: 40px;
   margin-top: 60px;
-  position: absolute;
+  position: relative;
   width: 340px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -195,6 +240,12 @@ body {
   }
   .welcome-text {
     margin-top: 500px;
+  }
+  .welcome-text .open-button {
+    font-size: 40px;
+    width: 500px;
+    text-align: center;
+    right: auto;
   }
 }
 /*# sourceMappingURL=style_home.css.map */

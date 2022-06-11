@@ -24,6 +24,7 @@
     "prettier": "2.6.2"
   },
   "dependencies": {
-    "react-alert": "^7.0.3"
+    "react-alert": "^7.0.3",
+    "ws": "^8.8.0"
   }
 }

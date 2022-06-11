@@ -7,6 +7,9 @@ import User from "./User";
 import Service from "./Service";
 import Auditorium from "./Auditorium";
 import LoginRoute from "./LoginRoute";
+import "./html_css/styles/style_home.css";
+import "./html_css/styles/style_login.css";
+import "./html_css/styles/layout.css";
 
 function App() {
   return (

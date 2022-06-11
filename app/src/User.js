@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { sendRequest } from "./SendRequest.js";
 import { useNavigate } from "react-router-dom";
-import "./html_css/styles/layout.css";
 
 export default function User() {
   const [user, setUser] = useState(
@@ -60,7 +59,7 @@ export default function User() {
     sendRequest("DELETE", requestURL, oldUser.oldUsername, oldUser.oldPassword)
       .then((data) => {
         setOldUser({ oldPassword: undefined, oldUsername: undefined });
-        alert(data);
+        alert(data["msg"]);
       })
       .catch((err) => alert(err["error"]));
     navigate("/login");

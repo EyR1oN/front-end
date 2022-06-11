@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { sendRequest } from "./SendRequest.js";
 import { useNavigate } from "react-router-dom";
-import "./html_css/styles/layout.css";
 
 export default function Auditorium() {
   const params = useParams();
